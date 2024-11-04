@@ -163,4 +163,7 @@ cython_debug/
 
 #my_added
 test.py
+src/staticfiles/vendors
+# ignore local-cdn(content delevery network)
+local-cdn/
 
