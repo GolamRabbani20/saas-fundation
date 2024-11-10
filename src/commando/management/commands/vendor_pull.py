@@ -4,6 +4,7 @@ from django.core.management.base import BaseCommand
 
 STATICFILES_VENDOR_DIR = getattr(settings, 'STATICFILES_VENDOR_DIR')
 
+
 VENDOR_STATICFILES = {
     "flowbite.min.css": "https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css",
     "flowbite.min.js": "https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js",
@@ -21,6 +22,7 @@ class Command(BaseCommand):
             
             else:
               self.stdout.write(self.style.ERROR(f"Faild to download {url}"))
+
         if set(completed_urls) == set(VENDOR_STATICFILES.values()):
             self.stdout.write(self.style.SUCCESS('Successfully updated vendor static files.'))
         else:
